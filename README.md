@@ -14,8 +14,8 @@ Example taken from Oscar Luis Vera-Pérez's [Software Validation & Verification 
 [`FindLastProperties.java`](src/test/java/FindLastProperties.java) shows how property-based testing can be used to 
 automatically find test inputs that lead to a test failure.
 
-### [`MaxInt2`](src/main/java/MaxInt2.java), [`MaxInt4`](src/main/java/MaxInt4.java), and [`MaxPos`](src/main/java/MaxPos.java)
-[`maxInt2(int x1, int x2)`](src/main/java/MaxInt2.java#L6-L11) and 
+### [`MaxInt2`](src/main/java/Count.java), [`MaxInt4`](src/main/java/MaxInt4.java), and [`MaxPos`](src/main/java/MaxPos.java)
+[`maxInt2(int x1, int x2)`](src/main/java/Count.java#L6-L11) and 
 [`maxInt4(int x1, int x2, int x3, int x4)`](src/main/java/MaxInt4.java#L6-L33) 
 illustrate line and branch coverage. 
 Tests in [`maxInt4ExampleTests.java`](src/test/java/MaxInt4ExampleTests.java) show how poor coverage

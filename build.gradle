@@ -4,6 +4,7 @@
 plugins {
     id 'java'
     id 'idea'
+    id 'info.solidsoft.pitest' version '1.19.0-rc.1'
 }
 
 repositories {
@@ -16,9 +17,10 @@ ext {
 //    junitJupiterVersion = "5.8.2"
     junitJupiterVersion = "5.9.3"
 //    jqwikVersion = "1.6.5"
-    jqwikVersion = "1.7.3"
+    jqwikVersion = "1.9.3"
 //    assertJVersion = "3.12.2"
-    assertJVersion = "3.24.2"
+//    assertJVersion = "3.24.2"
+    assertJVersion = "3.25.3"
 }
 
 compileJava {
@@ -29,11 +31,8 @@ test {
     useJUnitPlatform {
         includeEngines 'jqwik'
         includeEngines 'junit-jupiter'
-        // includeEngines 'junit-vintage'
-
-        include '**/*Properties.class'
-        include '**/*Test*.class'
-        include '**/*Tests*.class'
+//        include '**/SampleTests.class'
+        include '**/MaxProperties.class'
     }
 }
 
@@ -47,5 +46,17 @@ dependencies {
 
     // adding AssertJ library (fluent interface)
     testImplementation "org.assertj:assertj-core:${assertJVersion}"
+}
 
+pitest {
+    junit5PluginVersion = '1.2.1'
+//    targetClasses = ['SampleProgs']
+//    targetTests   = ['SampleTests']
+    targetClasses = ['MaxPos']
+    targetTests   = ['MaxProperties']
+    outputFormats = ['HTML']
+    timestampedReports = false
+    mutators = ['ALL']
+//    mutators = ['MATH']
+    skipFailingTests = false
 }
